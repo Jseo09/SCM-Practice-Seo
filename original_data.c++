@@ -16,10 +16,15 @@ double multiply(double a, double b) {
     return a * b;
 }
 
-// Initial division function (bug: division by zero is not handled)
+// Updated division function with bug fix: division by zero check
 double divide(double a, double b) {
+    if (b == 0) {
+        cout << "Error: Division by zero." << endl;
+        return 0; // Alternatively, you can throw an exception.
+    }
     return a / b;
 }
+
 
 int main() {
     cout << "Simple Calculator" << endl;
