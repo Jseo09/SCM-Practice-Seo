@@ -25,6 +25,20 @@ double divide(double a, double b) {
     return a / b;
 }
 
+// New feature: Function to compute factorial
+int factorial(int n) {
+    if (n < 0) {
+        cout << "Error: Factorial of a negative number is undefined." << endl;
+        return -1;
+    }
+    if (n == 0)
+        return 1;
+    int result = 1;
+    for (int i = 1; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
 
 int main() {
     cout << "Simple Calculator" << endl;
@@ -46,5 +60,12 @@ int main() {
     }
     
     cout << "Result: " << result << endl;
+    
+    // Using the new feature: calculate factorial
+    int num;
+    cout << "Enter a number to compute its factorial: ";
+    cin >> num;
+    cout << "Factorial of " << num << " is " << factorial(num) << endl;
+    
     return 0;
 }
