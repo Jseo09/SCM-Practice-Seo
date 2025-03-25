@@ -40,6 +40,11 @@ int factorial(int n) {
     return result;
 }
 
+// ***** SMALL CHANGE: Add a function to compute the square of a number *****
+double square(double x) {
+    return x * x;
+}
+
 int main() {
     cout << "Simple Calculator" << endl;
     
@@ -61,11 +66,23 @@ int main() {
     
     cout << "Result: " << result << endl;
     
-    // Using the new feature: calculate factorial
+    // Using the factorial feature
     int num;
     cout << "Enter a number to compute its factorial: ";
     cin >> num;
     cout << "Factorial of " << num << " is " << factorial(num) << endl;
-    
+
+    // ***** SMALL CHANGE USAGE *****
+    // Prompt the user if they want to square a number
+    char squareOption;
+    cout << "Do you want to square a number? (y/n): ";
+    cin >> squareOption;
+    if (squareOption == 'y' || squareOption == 'Y') {
+        double valToSquare;
+        cout << "Enter a number to square: ";
+        cin >> valToSquare;
+        cout << valToSquare << " squared is " << square(valToSquare) << endl;
+    }
+
     return 0;
 }
